@@ -1,0 +1,122 @@
+body {
+    font-family: Nunito, sans-serif;
+    --background-color: white;
+    --text-color: black;
+    --elements-color: white;
+}
+
+body.dark {
+    --background-color: hsl(207, 26%, 17%);
+    --text-color: white;
+    --elements-color: hsl(209, 23%, 22%);
+}
+
+.back-button {
+    padding: 6px 24px;
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--elements-color);
+}
+
+.shimmer {
+  display: block;
+  /* border: 1px solid #fff; */
+  box-shadow:0px 0px 8px 0 #a9a9a9;
+  padding: 30px 40px;
+  height: 300px;
+  width: 50%;
+  margin: 50px auto;
+}
+
+.animate {
+    animation : shimmer 2s infinite;
+    background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+ }
+
+ @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+.country-details-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top:32px;
+}
+
+.country-details {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin-top: 64px;
+}
+
+.country-details img {
+    width: 40%;
+    /* border: 1px solid #ddd; */
+}
+
+.details-text{
+    display:flex;
+    flex-direction: column;
+    row-gap:12px;
+    column-gap: 64px;
+    max-height:180px;
+    flex-wrap: wrap;
+    color: var(--text-color);
+}
+
+.details-text p {
+    margin: 0;
+}
+
+.border-countries {
+    border-top: 48px;
+    display:flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap:8px;
+}
+
+.border-countries a {
+    padding: 6px 24px;
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0.2);
+    border-radius: 4px;
+    font-size:14px;
+    padding: 4px 16px;
+    background-color: var(--elements-color);
+    color: var(--text-color)
+}
+
+@media(max-width: 940px) {
+    .country-details {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 32px;
+        gap: 16px;
+    }
+
+    .shimmer {
+        width: 100%;
+    }
+
+    .details-text {
+        display: block;
+        max-height: unset;
+    }
+
+    .details-text p {
+        margin: 16px;
+    }
+
+    .country-details img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
